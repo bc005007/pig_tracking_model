@@ -51,7 +51,7 @@ Yolov5 StrongSort모델
 
 ### 2. Model
 
-2.1 모델- Yolov4 Ultralytics
+2.1 모델- Yolov5 Ultralytics
 
 1.Ultralytics Package 설치 및 requirements 설치
 
@@ -109,10 +109,10 @@ custom_data.yaml 파일 학습
 2.2 모델- STRONG SORT (yolov5에서 구한 weight과 STRONG SORT의 가중치를 넣어서 STRONG SORT 실행함)
 
 ```python
-!python track_2.py --yolo-weights epoch50_batchsize8.pt --reid-weights osnet_x0_25_msmt17.pt --source /data/yolov5_new/pigvid1.mp4 --line-thickness 2 --conf-thres 0.8 --iou-thres 0.5 --augment --save-vid --save-txt
+!python track.py --yolo-weights epoch50_batchsize8.pt --reid-weights osnet_x0_25_msmt17.pt --source /data/yolov5_new/pigvid1.mp4 --line-thickness 2 --conf-thres 0.8 --iou-thres 0.5 --augment --save-vid --save-txt
 ```
 
-track_2.py
+track.py
 
 yolo 가중치(학습한 모델: epoch50_batchsize8.pt
 
@@ -153,7 +153,7 @@ STRONG SORT의 가중치: osnet_x0_25_msmt17.pt
 
 구한 결과 값: 
 
-track_2.py
+track.py
 
 yolo 가중치: epoch50_batchsize8.pt
 
