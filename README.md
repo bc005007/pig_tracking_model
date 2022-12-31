@@ -173,3 +173,5 @@ STRONG SORT의 가중치: osnet_x0_25_msmt17.pt
 
 ### 최종 결과물
 <img width="80%" src="https://user-images.githubusercontent.com/74126695/210139608-67e100a0-75af-46e2-bb34-4c7518ae3523.gif"/>
+
+풀버전 유튜브 영상 링크: https://www.youtube.com/watch?v=BOOLM5Bl4OM
