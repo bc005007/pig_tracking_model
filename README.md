@@ -9,7 +9,13 @@ YOLOv5 & StrongSORT
 ### Training Environment
 
 - 각 모델 설정값 참고
-- CUDA 10.2
+- KiSTi 국가컴퓨팅센터 - 뉴론(NEURON)
+- 운영체제: CentOS 7.9 (Linux, 64-bit)
+- CPU: Intel Xeon Ivy Bridge (E5-2670) / 2.50GHz (10-core) / 2 socket
+- GPU: Tesla V100-PCIE-16GB(2개중 하나만 사용함)
+- 메인 메모리: 128GB DDR3 Memory
+- CUDA Version: 11.6
+- Python Version: 3.9.13
 - YOLO Ultraylitics
 
 ### Yolov5-STRONG SORT모델
@@ -60,14 +66,14 @@ Yolov5 StrongSort모델
 !cd yolov5;pip install -qr requirements.txt
 ```
 
-2.split_dataset- 1가지 COCO dataset을  train, val, test 셋으로 나눈다(val_ratio=0.2, test_ratio=0.1, random_seed=13)
+2.split_dataset- 1가지 COCO dataset을  train, val, test 셋으로 나눈다(val_ratio=0.2, test_ratio=0.1, random_seed=221111)
 
 ```python
 split_dataset(input_json='data/annotation/annotation.json',
               output_dir='data/annotation',
               val_ratio=0.2,
               test_ratio=0.1,
-              random_seed=13)
+              random_seed=221111)
 ```
 
 3.COCO2YOLO COCO 데이터 셋을 YOLO 형태로 변환
@@ -143,13 +149,13 @@ STRONG SORT의 가중치: osnet_x0_25_msmt17.pt
 
 **STRONG SORT**
 
-3-3.  {yolo를 돌려서 나온 .pt 파일}을 STRONG SORT에 넣어서 Tracking 시작
+3-3. YOLO를 돌려서 나온 .pt 파일}을 STRONG SORT에 넣어서 Tracking 시작
 
 ```python
-!python track_2.py --yolo-weights {yolo를 돌려서 나온 .pt 파일} --reid-weights osnet_x0_25_msmt17.pt --source /data/yolov5_new/pigvid1.mp4 --line-thickness 2 --conf-thres 0.8 --iou-thres 0.5 --augment --save-vid --save-txt
+!python track_2.py --yolo-weights {YOLO를 돌려서 나온 .pt 파일} --reid-weights osnet_x0_25_msmt17.pt --source /data/yolov5_new/pig_sample.mp4 --line-thickness 2 --conf-thres 0.8 --iou-thres 0.5 --augment --save-vid --save-txt
 ```
 
-{yolo를 돌려서 나온 .pt}- yolo를 돌린 후 /mydrive/ultra_workdir/pig/weights/에서 나온 {   .pt파일} 
+{YOLO를 돌려서 나온 .pt}- yolo를 돌린 후 /mydrive/ultra_workdir/pig/weights/에서 나온 {   .pt파일} 
 
 구한 결과 값: 
 
@@ -159,6 +165,6 @@ yolo 가중치: epoch50_batchsize8.pt
 
 STRONG SORT의 가중치: osnet_x0_25_msmt17.pt
 
---source(영상): /data/yolov5_new/pigvid1.mp4
+--source(영상): /data/yolov5_new/pig_sample.mp4
 
 —save-txt: 평가 지표
