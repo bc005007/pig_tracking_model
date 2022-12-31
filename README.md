@@ -100,7 +100,7 @@ test_yolo_converter.coco2yolo()
 custom_data.yaml 파일 학습
 
 ```python
-!cd /data/yolov5; python train.py --img 640 --batch 8 --epochs 30 --data pig/custom_data.yaml --weights yolov5l.pt \
+!cd /data/yolov5; python train.py --img 640 --batch 8 --epochs 50 --data pig/custom_data.yaml --weights yolov5l.pt \
                                      --project=ultra_workdir--name pig --exist-ok
 ```
 
