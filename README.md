@@ -168,3 +168,8 @@ STRONG SORT의 가중치: osnet_x0_25_msmt17.pt
 --source(영상): /data/yolov5_new/pig_sample.mp4
 
 —save-txt: 평가 지표
+
+
+
+### 최종 결과물
+<img width="80%" src="https://user-images.githubusercontent.com/74126695/210139608-67e100a0-75af-46e2-bb34-4c7518ae3523.gif"/>
